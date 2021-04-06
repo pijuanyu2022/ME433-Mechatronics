@@ -1,1 +1,1 @@
-This is the data of signal A
+This is the result of signal A
