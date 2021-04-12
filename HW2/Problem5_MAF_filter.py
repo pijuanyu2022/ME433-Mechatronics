@@ -44,7 +44,6 @@ A = s1
 while i<len(A)-X+1:
     B = A[-(i+X):-i] # select the last X numbers
     B_ave = sum(B)/X # average the last X numbers
-    A[-(i+2)] = B_ave # add the new number into the old list
     M.append(B_ave) # collect the new number
     i +=1
 
