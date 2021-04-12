@@ -43,7 +43,7 @@ t = [] # column 0
 s1 = [] # column 1
 
 dt = 1.0/100.0 # 100Hz
-with open('/home/pyu2020/Downloads/ME433_2021-main/HW2-DSP/sigA.csv') as f:
+with open('/home/pyu2020/Downloads/ME433_2021-main/HW2-DSP/sigD.csv') as f:
     # open the csv file
     reader = csv.reader(f)
     for row in reader:
@@ -80,7 +80,7 @@ M = []
 A = s1
 while i<len(A)-X+1:
     B = A[-(i+X):-i] # select the last X numbers
-    sum_B = np.multiply(B,H)
+    sum_B = np.multiply(B,H) # sum the samples with unique weights from H
     B_ave = sum(sum_B) # average the last X numbers
     M.append(B_ave) # collect the new number
     i +=1
@@ -101,10 +101,3 @@ Y_new = Y_new[range(int(n/2))]
 ax2.loglog(frq,abs(Y_new),color = 'red', label = 'new data') # plotting the fft
 ax1.set_title("The number of data points averaged is %s"%X)
 plt.show()
-
-# write csv file
-file = open("sig_average_data.csv", "w")
-writer = csv.writer(file)
-for w in range(len(s)):
-    writer.writerow([t[w],s[w]])
-file.close()
