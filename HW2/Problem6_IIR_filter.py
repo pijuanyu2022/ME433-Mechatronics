@@ -31,7 +31,6 @@ Y = Y[range(int(n/2))]
 
 fig, (ax1, ax2) = plt.subplots(2, 1)
 ax1.plot(t,y,color = 'black', label = 'old data')
-ax1.set_title('A=0.998, B=0.002')
 ax1.set_xlabel('Time')
 ax1.set_ylabel('Amplitude')
 ax2.loglog(frq,abs(Y),color = 'black', label = 'old data') # plotting the fft
@@ -40,7 +39,7 @@ ax2.set_ylabel('|Y(freq)|')
 
 
 A = 0.998
-B = 1-A
+B = round(1-A, 3)
 
 i = 0
 new_ave = 0
@@ -63,4 +62,5 @@ frq_new = frq_new[range(int(n_new/2))] # one side frequency range
 Y_new = np.fft.fft(y_new)/n_new # fft computing and normalization
 Y_new = Y_new[range(int(n/2))]
 ax2.loglog(frq,abs(Y_new),color = 'red', label = 'new data') # plotting the fft
+ax1.set_title("The weight A is {A}, The weight B is {B}".format(A=A, B=B))
 plt.show()
