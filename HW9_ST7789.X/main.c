@@ -95,7 +95,7 @@ int main() {
             // draw the bar
             draw_Bar(28, 70, i, 100, 15);// 100 is the length, 15 is the width 
         
-            float FPS = 48000000.0/ _CP0_GET_COUNT();
+            float FPS = 24000000.0/ _CP0_GET_COUNT();
             sprintf(m, "FPS = %.2f", FPS);
             draw_String(28, 120, WHITE, m); // write FPS on screen
             
