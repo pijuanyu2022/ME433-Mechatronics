@@ -36,12 +36,7 @@
 #pragma config PMDL1WAY = OFF // allow multiple reconfigurations
 #pragma config IOL1WAY = OFF // allow multiple reconfigurations
 
-void delay(void);
 void blink_LED(void);
-
-//unsigned char Wadd=0b01000000;
-//unsigned char Radd=0b01000001;
-
 int main() {
 
     __builtin_disable_interrupts(); // disable interrupts while initializing things
